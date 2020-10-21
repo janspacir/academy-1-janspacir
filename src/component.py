@@ -72,8 +72,7 @@ class Component(KBCEnvHandler):
                 destination='out.c-academy-1-janspacir.output',
                 primary_key=['row_number'],
                 incremental=True,
-                columns=new_columns
-            )
+                columns=new_columns)
 
             with CachedOrthogonalDictWriter('output.csv', new_columns) as writer:
                 for index, l in enumerate(reader):
