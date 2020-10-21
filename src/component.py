@@ -63,7 +63,13 @@ class Component(KBCEnvHandler):
             new_columns = reader.fieldnames
             # append row number col
             new_columns.append('row_number')
-       
+         result_file_path = os.path.join(self.tables_out_path, 'output.csv')
+        self.configuration.write_table_manifest(
+                'out/tables/output.csv',
+                destination='out.c-academy-1-janspacir.output',
+                primary_key=['row_number'],
+                incremental=True,
+                columns=new_columns)
 
             with CachedOrthogonalDictWriter('output.csv', new_columns) as writer:
                 for index, l in enumerate(reader):
@@ -77,13 +83,7 @@ class Component(KBCEnvHandler):
                     # move to folder
         shutil.move(source_file_path, os.path.join(source_file_path, 'source_file_path'))
         
-        result_file_path = os.path.join(self.tables_out_path, 'output.csv')
-        self.configuration.write_table_manifest(
-                'output.csv',
-                destination='out.c-academy-1-janspacir.output',
-                primary_key=['row_number'],
-                incremental=True,
-                columns=new_columns)
+      
         
         state['last_update'] = datetime.utcnow().timestamp()
         self.write_state_file(state)
