@@ -36,9 +36,6 @@ class Component(KBCEnvHandler):
             logging.getLogger().setLevel(logging.DEBUG)
         logging.info('Running version %s', APP_VERSION)
         logging.info('Loading configuration...')
-        else:
-            logging.exception(e)
-            exit(1)
 
     def run(self):
         '''
