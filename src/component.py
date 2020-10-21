@@ -14,13 +14,11 @@ from kbc.client_base import HttpClientBase
 from kbc.env_handler import KBCEnvHandler
 
 # configuration variables
-KEY_API_TOKEN = '#api_token'
 KEY_PRINT_HELLO = 'print_hello'
 
 # #### Keep for debug
 KEY_DEBUG = 'debug'
 
-MANDATORY_PARS = [KEY_API_TOKEN, KEY_API_TOKEN]
 MANDATORY_IMAGE_PARS = []
 
 APP_VERSION = '0.0.1'
