@@ -8,7 +8,7 @@ SOURCE_FILE_PATH = DATA_FOLDER.joinpath('in/tables/input.csv')
 RESULT_FILE_PATH = DATA_FOLDER.joinpath('out/tables/output.csv')
 
 config = json.load(open(DATA_FOLDER.joinpath('config.json')))
-PARAM_PRINT_LINES = config['parameters']['print_rows']
+PARAM_PRINT_LINES = True
 
 print('Running...')
 with open(SOURCE_FILE_PATH, 'r') as input, open(RESULT_FILE_PATH, 'w+', newline='') as out:
