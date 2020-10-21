@@ -41,6 +41,13 @@ class Component(KBCEnvHandler):
         logging.info('Running version %s', APP_VERSION)
         logging.info('Loading configuration...')
 
+        try:
+            self.validate_config(MANDATORY_PARS)
+            self.validate_image_parameters(MANDATORY_IMAGE_PARS)
+        except ValueError as e:
+            logging.exception(e)
+            exit(1)
+
     def run(self):
         '''
         Main execution code
