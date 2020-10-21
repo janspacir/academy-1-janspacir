@@ -19,6 +19,7 @@ KEY_PRINT_HELLO = 'print_hello'
 # #### Keep for debug
 KEY_DEBUG = 'debug'
 
+MANDATORY_PARS = []
 MANDATORY_IMAGE_PARS = []
 
 APP_VERSION = '0.0.1'
