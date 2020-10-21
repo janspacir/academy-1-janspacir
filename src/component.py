@@ -63,7 +63,8 @@ class Component(KBCEnvHandler):
             new_columns = reader.fieldnames
             # append row number col
             new_columns.append('row_number')
-         result_file_path = os.path.join(self.tables_out_path, 'output.csv')
+            
+        result_file_path = os.path.join(self.tables_out_path, 'out/tables/output.csv')
         self.configuration.write_table_manifest(
                 'out/tables/output.csv',
                 destination='out.c-academy-1-janspacir.output',
