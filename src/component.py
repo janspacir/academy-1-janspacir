@@ -66,7 +66,7 @@ class Component(KBCEnvHandler):
 
             result_file_path = os.path.join(self.tables_out_path, 'output.csv')
             self.configuration.write_table_manifest(
-                'output.csv',destination='out.c-academy-1-janspacir.output', 'w', primary_key=['row_number'],incremental=True, columns=new_columns
+                'output.csv',destination='out.c-academy-1-janspacir.output', primary_key=['row_number'],incremental=True, columns=new_columns, 'w'
             )
 
             with CachedOrthogonalDictWriter('output.csv', new_columns) as writer:
