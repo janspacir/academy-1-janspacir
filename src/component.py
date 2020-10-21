@@ -10,7 +10,6 @@ import shutil
 import sys
 from datetime import datetime
 from pathlib import Path
-from datetime import datetime
 from kbc.client_base import HttpClientBase
 from kbc.env_handler import KBCEnvHandler
 from kbc.csv_tools import CachedOrthogonalDictWriter
