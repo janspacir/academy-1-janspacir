@@ -79,16 +79,17 @@ class Component(KBCEnvHandler):
         source_file_path = first_table.full_path
         result_file_path = os.path.join(self.tables_out_path, 'output.csv')
 
-      PARAM_PRINT_LINES = True
-       print('Running...')
-       with open(SOURCE_FILE_PATH, 'r') as input, open(RESULT_FILE_PATH, 'w+', newline='') as out:
-       reader = csv.DictReader(input)
-       new_columns = reader.fieldnames
-       # append row number col
-       new_columns.append('row_number')
-       writer = csv.DictWriter(out, fieldnames=new_columns, lineterminator='\n', delimiter=',')
-       writer.writeheader()
-       for index, l in enumerate(reader):
+        PARAM_PRINT_LINES = True
+     
+        print('Running...')
+        with open(SOURCE_FILE_PATH, 'r') as input, open(RESULT_FILE_PATH, 'w+', newline='') as out:
+        reader = csv.DictReader(input)
+        new_columns = reader.fieldnames
+        # append row number col
+        new_columns.append('row_number')
+        writer = csv.DictWriter(out, fieldnames=new_columns, lineterminator='\n', delimiter=',')
+        writer.writeheader()
+        for index, l in enumerate(reader):
         # print line
         if PARAM_PRINT_LINES:
             print(f'Printing line {index}: {l}')
