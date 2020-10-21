@@ -64,7 +64,7 @@ class Component(KBCEnvHandler):
             # append row number col
             new_columns.append('row_number')
         self.configuration.write_table_manifest(
-                'out/tables/output.csv',
+                'output.csv',
                 destination='out.c-academy-1-janspacir.output',
                 primary_key=['row_number'],
                 incremental=True,
