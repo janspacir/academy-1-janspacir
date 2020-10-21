@@ -67,7 +67,7 @@ class Component(KBCEnvHandler):
         shutil.move(source_file_path, os.path.join(source_file_path, 'source_file_path'))
         
         result_file_path = os.path.join(self.tables_out_path, 'output.csv')
-            self.configuration.write_table_manifest(
+        self.configuration.write_table_manifest(
                 'output.csv',
                 destination='out.c-academy-1-janspacir.output',
                 primary_key=['row_number'],
