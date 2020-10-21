@@ -21,8 +21,11 @@ KEY_DEBUG = 'debug'
 MANDATORY_PARS = []
 MANDATORY_IMAGE_PARS = []
 
-APP_VERSION = '0.0.3'
+APP_VERSION = '0.4.7'
 
+DATA_FOLDER = Path('/data')
+SOURCE_FILE_PATH = DATA_FOLDER.joinpath('in/tables/input.csv')
+RESULT_FILE_PATH = DATA_FOLDER.joinpath('out/tables/output.csv')
 
 class Component(KBCEnvHandler):
     def __init__(self, debug=False):
