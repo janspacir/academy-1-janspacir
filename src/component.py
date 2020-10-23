@@ -86,8 +86,8 @@ class Component(KBCEnvHandler):
         #result_file_path = os.path.join(self.tables_out_path, 'output.csv')
       
         
-state['last_update'] = datetime.utcnow().timestamp()
-self.write_state_file(state)
+        state['last_update'] = datetime.utcnow().timestamp()
+        self.write_state_file(state)
 
 
 """
