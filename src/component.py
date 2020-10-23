@@ -70,10 +70,8 @@ class Component(KBCEnvHandler):
                 result_file_path = os.path.join(self.tables_out_path, 'output.csv'),
                 destination='out.c-academy-1-janspacir.output',
                 primary_key=['row_number'],
-                incremental=True,
-                columns=new_columns)
-        with CachedOrthogonalDictWriter(
-            result_file_path = os.path.join(self.tables_out_path, 'output.csv'))as writer:
+                incremental=True)
+      with CachedOrthogonalDictWriter(new_columns, result_file_path = os.path.join(self.tables_out_path, 'output.csv')) as writer:
                 for index, l in enumerate(reader):
                     # print line
                     if params.get(KEY_PRINT_ROWS):
