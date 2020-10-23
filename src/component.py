@@ -70,7 +70,7 @@ class Component(KBCEnvHandler):
                 result_file_path = os.path.join(self.tables_out_path, 'output.csv'),
                 destination='out.c-academy-1-janspacir.output',
                 primary_key=['row_number'],
-                incremental=True, 
+                incremental=True,
                 columns=new_columns)
         with CachedOrthogonalDictWriter(new_columns, result_file_path = os.path.join(self.tables_out_path, 'output.csv')) as writer:
                 for index, l in enumerate(reader):
@@ -84,10 +84,10 @@ class Component(KBCEnvHandler):
                     # move to folder
         #shutil.move(source_file_path, os.path.join(source_file_path, 'source_file_path'))
         #result_file_path = os.path.join(self.tables_out_path, 'output.csv')
-      
-        
-        state['last_update'] = datetime.utcnow().timestamp()
-        self.write_state_file(state)
+
+
+        #state['last_update'] = datetime.utcnow().timestamp()
+        self.write__file(state)
 
 
 """
