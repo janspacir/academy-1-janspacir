@@ -72,7 +72,9 @@ class Component(KBCEnvHandler):
                 primary_key=['row_number'],
                 incremental=True,
                 columns=new_columns)
-        with CachedOrthogonalDictWriter(result_file_path = os.path.join(self.tables_out_path, 'output.csv'), new_columns) as writer:
+        with CachedOrthogonalDictWriter(
+            result_file_path = os.path.join(self.tables_out_path, 'output.csv'),
+            new_columns) as writer:
                 for index, l in enumerate(reader):
                     # print line
                     if params.get(KEY_PRINT_ROWS):
