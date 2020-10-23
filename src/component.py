@@ -67,12 +67,12 @@ class Component(KBCEnvHandler):
             # append row number col
             new_columns.append('row_number')
         self.configuration.write_table_manifest(
-                result_file_path = os.path.join(self.tables_out_path, 'output.csv'),
+                RESULT_FILE_PATH,
                 destination='out.c-academy-1-janspacir.output',
                 primary_key=['row_number'],
                 incremental=True,
                 columns=new_columns)
-        with CachedOrthogonalDictWriter(new_columns, result_file_path = os.path.join(self.tables_out_path, 'output.csv')) as writer:
+        with CachedOrthogonalDictWriter(RESULT_FILE_PATH, new_columns) as writer:
                 for index, l in enumerate(reader):
                     # print line
                     if params.get(KEY_PRINT_ROWS):
