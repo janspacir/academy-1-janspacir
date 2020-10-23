@@ -70,12 +70,13 @@ class Component(KBCEnvHandler):
                 result_file_path = os.path.join(self.tables_out_path, 'output.csv'),
                 destination='out.c-academy-1-janspacir.output',
                 primary_key=['row_number'],
-                incremental=True)
-      with CachedOrthogonalDictWriter(new_columns, result_file_path = os.path.join(self.tables_out_path, 'output.csv')) as writer:
+                incremental=True, 
+                columns=new_columns)
+with CachedOrthogonalDictWriter(result_file_path = os.path.join(self.tables_out_path, 'output.csv'), new_columns) as writer:
                 for index, l in enumerate(reader):
                     # print line
                     if params.get(KEY_PRINT_ROWS):
-                        print(f'Printing line {index}: {l}')
+                        print('Printing line {index}: {l}')
                     # add row number
                     l['row_number'] = index
                     writer.writerow(l)
@@ -85,8 +86,8 @@ class Component(KBCEnvHandler):
         #result_file_path = os.path.join(self.tables_out_path, 'output.csv')
       
         
-        state['last_update'] = datetime.utcnow().timestamp()
-        self.write_state_file(state)
+state['last_update'] = datetime.utcnow().timestamp()
+self.write_state_file(state)
 
 
 """
