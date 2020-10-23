@@ -82,8 +82,8 @@ class Component(KBCEnvHandler):
                     writer.writerow(l)
 
                     # move to folder
-        shutil.move(source_file_path, os.path.join(source_file_path, 'source_file_path'))
-        result_file_path = os.path.join(self.tables_out_path, 'output.csv')
+        #shutil.move(source_file_path, os.path.join(source_file_path, 'source_file_path'))
+        #result_file_path = os.path.join(self.tables_out_path, 'output.csv')
       
         
         state['last_update'] = datetime.utcnow().timestamp()
